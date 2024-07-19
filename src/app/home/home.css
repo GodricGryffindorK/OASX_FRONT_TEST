@@ -1,0 +1,26 @@
+.hero-border {
+  border-width: 1px;
+  border-radius: 30px;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.search-caption {
+  background: linear-gradient(to right, #9ae2c8, #20d795, #0c5f55);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.search-btn {
+  background: linear-gradient(to right, #20d795, #0c5f55);
+}
+
+.swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  background: #646464;
+}
+
+.swiper-pagination-bullet-active {
+  background: #20d795; /* Active bullet color */
+}

@@ -1,16 +1,20 @@
-import React from 'react';
-import { ThemeProvider } from '@mui/material/styles';
-import theme from '@/lib/theme'; // Adjust the path if needed
-import "./global.css"
+import './global.css'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className='bg-default'>
-        <ThemeProvider theme={theme}>
-          {children}
-        </ThemeProvider>
-      </body>
+    <html lang='en'>
+
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className='bg-default'>{children}</body>
     </html>
   );
 }
