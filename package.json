@@ -4,21 +4,32 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "vite-dev": "vite",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "vite-build": "vite build",
+    "serve": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.12.0",
+    "@emotion/styled": "^11.12.0",
+    "@mui/icons-material": "^5.16.4",
+    "@mui/material": "^5.16.4",
+    "@mui/x-data-grid": "^7.11.0",
+    "@mui/x-date-pickers": "^7.11.0",
+    "@tanstack/react-query": "^5.51.9",
+    "next": "14.2.5",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.5"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.6",
+    "typescript": "^5",
+    "vite": "^5.3.4"
   }
 }
