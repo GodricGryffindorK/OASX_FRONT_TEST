@@ -15,7 +15,9 @@ module.exports = {
         'landingContentWidthHeight': 'calc(100vh - 2px)', // Adjust this value as needed
       },
       backgroundImage: {
-        "landingBorderGradient": 'linear-gradient(to bottom right, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 30%, rgba(255,255,255,0.1) 100%, rgba(255,255,255,0) 100%)',
+        "landingBorderGradient": 'linear-gradient(to bottom right, rgba(255,255,255,0.4), rgba(255,255,255,0), rgba(255,255,255,0.1), rgba(255,255,255,0))',
+        "searchBtnGradient": 'linear-gradient(to right, #20d795, #0c5f55)',
+        'searchCaptionGradient': 'linear-gradient(to right, #9ae2c8, #20d795, #0c5f55)',
       },
       spacing: {
         'building': '8rem', // Example default value
@@ -53,5 +55,17 @@ module.exports = {
       secondary: 'white',
     }),
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities(
+        {
+          '.search-caption-text': {
+            'background-clip': 'text',
+            '-webkit-background-clip': 'text',
+          },
+        },
+        ['responsive', 'hover']
+      );
+    },
+  ],
 }

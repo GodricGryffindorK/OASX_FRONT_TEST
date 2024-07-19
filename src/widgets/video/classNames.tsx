@@ -2,7 +2,7 @@ export const containerClasses = `w-full max-w-2xl mt-[-40%] z-10 flex space-x-bu
 export const innerDivClasses = `mt-[-20px]`;
 
 ///Total Widget Continer
-export const WidgetVideoContainer = `w-full h-screen flex flex-col items-center  overflow-hidden mb-4 mt-8`
+export const WidgetVideoContainer = `w-full h-screen flex flex-col items-center  overflow-hidden`
 
 ///For TimeLine
 export const TimeLineContainer = `w-full max-w-2xl mt-[-40px] z-10`

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'; // Import the arrow icon
 
 const AutoScrollBtn = () => {
@@ -28,7 +28,7 @@ const AutoScrollBtn = () => {
     return (
         <>
             {showButton && (
-                <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 text-center">
+                <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 text-center ">
                     <button
                         onClick={scrollToNextPage}
                         className="pb-4 px-1 shadow-md hover:bg-blue-600 transition border-[2px] border-autoScrollBtn rounded-full"

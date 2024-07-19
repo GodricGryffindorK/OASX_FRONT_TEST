@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Timeline from './timeLine';
 // import BuildingsBtnsWithBadges from './buildingsBtnBadgeList';
 // import BuildingsRadioList from './buildingsRadioList';
