@@ -52,25 +52,39 @@ const MarketPlaceWidget = () => {
             <h1 className='text-white text-[42px] my-8 font-sans'>Explore the functions of the marketplace</h1>
             <Swiper
                 spaceBetween={50}
-                slidesPerView={2.1}
                 pagination={{ clickable: true }}
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
                 className='flex items-center justify-center'
+                breakpoints={{
+                    1000: {
+                        slidesPerView: 1,  // Show only 1 slide for screens less than 600px
+                    },
+                    1001: {
+                        slidesPerView: 2.1,  // Show 2.1 slides for screens larger than 600px
+                    }
+                }}
             >
-                {mockData.map(((item: SlideItem, index) => <SwiperSlide key={index}>
-                    <div className='p-[1px] bg-landingBorderGradient rounded-[30px]'>
-                        <div className='flex hero-border p-4 rounded-[30px] bg-landingBack'>
-                            <Image className='w-[270px]' src={`/imgs/iPhone_screenshots/${item.imgUrl}`} alt="iPhone ScreenShot" width={298} height={589} />
-                            <div className='flex flex-col justify-center bg-gray-800 rounded-lg  p-6 w-96'>
-                                <h2 className='text-primary text-2xl font-bold mb-2'>{item.title}</h2>
-                                <p className='text-gray-300 text-lg mb-4'>{item.description}</p>
+                {mockData.map((item: SlideItem, index) => (
+                    <SwiperSlide key={index}>
+                        <div className='p-[1px] bg-landingBorderGradient rounded-[30px]'>
+                            <div className='flex hero-border p-4 rounded-[30px] bg-landingBack flex-col sm:flex-row'>
+                                <Image
+                                    className='w-full sm:w-[270px] mb-4 sm:mb-0'
+                                    src={`/imgs/iPhone_screenshots/${item.imgUrl}`}
+                                    alt="iPhone ScreenShot"
+                                    width={298}
+                                    height={589}
+                                />
+                                <div className='flex flex-col justify-center bg-gray-800 rounded-lg p-6 w-full sm:w-96'>
+                                    <h2 className='text-primary text-2xl font-bold mb-2'>{item.title}</h2>
+                                    <p className='text-gray-300 text-lg mb-4'>{item.description}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </SwiperSlide>
+                    </SwiperSlide>
                 ))}
-
             </Swiper>
+
             <div className='flex flex-col items-center justify-center my-6'>
                 <a href='#' className='inline-flex items-center px-10 py-5 pb-5 text-[24px] font-semibold text-primary bg-landing rounded-full border border-primary font-sans'>
                     Go to marketplace
