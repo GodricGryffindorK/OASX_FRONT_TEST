@@ -56,10 +56,10 @@ const MarketPlaceWidget = () => {
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
                 className='flex items-center justify-center'
                 breakpoints={{
-                    1000: {
+                    1100: {
                         slidesPerView: 1,  // Show only 1 slide for screens less than 600px
                     },
-                    1001: {
+                    1101: {
                         slidesPerView: 2.1,  // Show 2.1 slides for screens larger than 600px
                     }
                 }}
