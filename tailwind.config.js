@@ -13,9 +13,10 @@ module.exports = {
       },
       height: {
         'landingContentWidthHeight': 'calc(100vh - 2px)', // Adjust this value as needed
+        'verticalTimeLine': 'calc(100vh - 200px)'
       },
       backgroundImage: {
-        "landingBorderGradient": 'linear-gradient(to bottom right, rgba(255,255,255,0.4), rgba(255,255,255,0), rgba(255,255,255,0.1), rgba(255,255,255,0))',
+        "landingBorderGradient": 'linear-gradient(to bottom right, rgba(255,255,255,0.4), rgba(255,255,255,0) 50%, rgba(255,255,255,0.1) 100%)',
         "searchBtnGradient": 'linear-gradient(to bottom right, rgba(32, 215, 149, 1), rgba(12, 95, 85, 1) 110%)',
         'searchCaptionGradient': 'linear-gradient(to bottom right, #9ae2c8, #20d795, #0c5f55 90%)',
       },
@@ -24,6 +25,7 @@ module.exports = {
       },
       colors: {
         autoScrollBtn: 'rgba(180,180,180,1)', // Replace with your desired color code
+        iPhoneCardBorder: 'rgba(255,255,255,0.4)',
         primary: {
           light: '#3b82f6', // Light primary color
           DEFAULT: '#20D795', // Default primary color
@@ -40,6 +42,7 @@ module.exports = {
       },
       margin: {
         half: "-40rem",
+        total: "-70%",
       }
     },
     backgroundColor: (theme) => ({

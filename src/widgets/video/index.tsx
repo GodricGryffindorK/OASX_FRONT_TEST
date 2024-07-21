@@ -1,8 +1,7 @@
 "use client"
 import { useRef, useState, useEffect } from 'react';
-import Timeline from './timeLine';
-// import BuildingsBtnsWithBadges from './buildingsBtnBadgeList';
-// import BuildingsRadioList from './buildingsRadioList';
+import PCTimeline from './PCTimeLine';
+import MobileTimeline from './MobileTimeLine'; // Import the second Timeline component
 
 import { WidgetVideoContainer, VideoElement, TimeLineContainer } from './classNames';
 
@@ -10,15 +9,14 @@ const VideoPlayer: React.FC = () => {
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const [currentTime, setCurrentTime] = useState<number>(0);
     const [videoSrc, setVideoSrc] = useState<string>('/videos/pc.mp4');
+    const [isMobileView, setIsMobileView] = useState<boolean>(false); // State to track mobile view
 
     useEffect(() => {
         // Function to update video source based on viewport width
         const updateVideoSource = () => {
-            if (window.innerWidth < 600) {
-                setVideoSrc('/videos/mobile.mp4');
-            } else {
-                setVideoSrc('/videos/pc.mp4');
-            }
+            const isMobile = window.innerWidth < 800;
+            setIsMobileView(isMobile);
+            setVideoSrc(isMobile ? '/videos/mobile.mp4' : '/videos/pc.mp4');
         };
 
         // Set initial video source
@@ -63,12 +61,9 @@ const VideoPlayer: React.FC = () => {
         const video = videoRef.current;
         if (video) {
             const updateTime = () => setCurrentTime(video.currentTime);
-            // const updateDuration = () => setDuration(video.duration);
             video.addEventListener('timeupdate', updateTime);
-            // video.addEventListener('loadedmetadata', updateDuration);
             return () => {
                 video.removeEventListener('timeupdate', updateTime);
-                // video.removeEventListener('loadedmetadata', updateDuration);
             };
         }
     }, []);
@@ -86,13 +81,7 @@ const VideoPlayer: React.FC = () => {
             >
                 Your browser does not support the video tag.
             </video>
-            <div className={TimeLineContainer}>
-                <Timeline currentTime={currentTime} duration={26.823264} />
-            </div>
-            {/* 
-            <BuildingsBtnsWithBadges/>
-            <BuildingsRadioList/> 
-            */}
+            {isMobileView ? <MobileTimeline currentTime={currentTime} duration={26.823264} /> : <PCTimeline currentTime={currentTime} duration={26.823264} />}
         </div>
     );
 };

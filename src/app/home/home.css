@@ -9,15 +9,12 @@
   /* Active bullet color */
 }
 
-/* Custom CSS to hide scrollbar */
-.hide-scrollbar {
-  scrollbar-width: none;
-  /* Firefox */
-  -ms-overflow-style: none;
-  /* Internet Explorer 10+ */
+.Shss-slide-item {
+  background-color: transparent !important;
+  border: none !important;
 }
 
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-  /* WebKit browsers */
+.Shss-progress-bar {
+  display: none !important;
 }
+

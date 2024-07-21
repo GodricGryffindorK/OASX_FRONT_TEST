@@ -8,6 +8,10 @@ export const WidgetVideoContainer = `my-10 mx-16 h-screen flex flex-col items-ce
 export const TimeLineContainer = `w-full max-w-2xl mt-[-40px] z-10 px-8`
 export const TimeLineUnactiveProgress = `relative w-full h-2 bg-videoTimeLineBack rounded-full`
 export const TimeLineActiveProgress = `absolute top-0 left-0 h-full bg-videoTimeLineActive rounded-full`
+///For TimeLine
+export const MobileTimeLineContainer = `h-verticalTimeLine max-w-2xl absolute z-10 px-8 mr-total my-32`;
+export const MobileTimeLineUnactiveProgress = `relative w-2 h-full bg-videoTimeLineBack rounded-full`;
+export const MobileTimeLineActiveProgress = `absolute left-0 top-0 w-full bg-videoTimeLineActive rounded-full`;
 
 ///For Video
 export const VideoElement = `w-full h-full object-cover rounded-[30px]`
