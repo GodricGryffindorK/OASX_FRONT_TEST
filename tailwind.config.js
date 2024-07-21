@@ -42,7 +42,7 @@ module.exports = {
       },
       margin: {
         half: "-40rem",
-        total: "-70%",
+        total: "-65%",
       }
     },
     backgroundColor: (theme) => ({
