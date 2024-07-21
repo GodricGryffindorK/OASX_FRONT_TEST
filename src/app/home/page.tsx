@@ -5,7 +5,6 @@ import OasixWidget from "@/widgets/oasix";
 import VideoWidget from "@/widgets/video";
 import SpeechSlideWidget from "@/widgets/speech";
 import MarketPlaceWidget from "@/widgets/marketplace";
-import AutoScrollBtn from "@/components/autoSlideBtn";
 import Footer from "@/layout/footer";
 import './home.css';
 
@@ -24,10 +23,9 @@ const Home = () => {
     };
 
     return (
-        <div className="container mx-auto">
+        <div className="">
             {/* <ReactPageScroller ref={pageScrollerRef} pageOnChange={pageOnChange}> */}
             <OasixWidget />
-            {/* <AutoScrollBtn /> */} 
             <VideoWidget />
             <SpeechSlideWidget />
 

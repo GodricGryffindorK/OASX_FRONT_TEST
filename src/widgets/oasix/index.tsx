@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import SearchBox from "./searchBox"
+import AutoScrollBtn from "@/components/autoSlideBtn";
 
 import { SearchCaption, WidgetFlexContainer } from "./classNames"
 import { WidgetBorderContainer, WidgetContentContainer } from "../WidgetClassNames"
@@ -14,6 +15,7 @@ const OasixWidget = () => {
                     <Image src='/imgs/oasix_logo.png' alt="oasix logo" width={193} height={73} />
                     <p className={SearchCaption}>Smart property search</p>
                     <SearchBox />
+                    <AutoScrollBtn />
                 </div>
             </div>
         </div>

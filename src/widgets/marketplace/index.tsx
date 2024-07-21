@@ -1,9 +1,10 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { useEffect, useRef } from 'react';
+import useScrollPercentage from '@/components/useScrollPercentage';
+import Grid from '@mui/material/Grid';
+import MarketPlaceScrollBar from "@/components/marketPlaceScrollBar"
+// Install modules
 
 interface SlideItem {
     imgUrl: string;
@@ -46,45 +47,51 @@ const mockData: SlideItem[] = [
 
 
 const MarketPlaceWidget = () => {
+    const containerRef = useRef(null);
+    const [scrollRef, scrollPercentage] = useScrollPercentage();
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (containerRef.current) {
+                containerRef.current.scrollLeft = window.scrollY;
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
 
-        <section className='relative'>
+        <section className='my-10 mx-16 relative'>
             <h1 className='text-white text-[42px] my-8 font-sans'>Explore the functions of the marketplace</h1>
-            <Swiper
-                spaceBetween={50}
-                pagination={{ clickable: true }}
-                autoplay={{ delay: 3000, disableOnInteraction: false }}
-                className='flex items-center justify-center'
-                breakpoints={{
-                    1100: {
-                        slidesPerView: 1,  // Show only 1 slide for screens less than 600px
-                    },
-                    1101: {
-                        slidesPerView: 2.1,  // Show 2.1 slides for screens larger than 600px
-                    }
-                }}
-            >
-                {mockData.map((item: SlideItem, index) => (
-                    <SwiperSlide key={index}>
-                        <div className='p-[1px] bg-landingBorderGradient rounded-[30px]'>
-                            <div className='flex hero-border p-4 rounded-[30px] bg-landingBack flex-col sm:flex-row'>
-                                <Image
-                                    className='w-full sm:w-[270px] mb-4 sm:mb-0'
-                                    src={`/imgs/iPhone_screenshots/${item.imgUrl}`}
-                                    alt="iPhone ScreenShot"
-                                    width={298}
-                                    height={589}
-                                />
-                                <div className='flex flex-col justify-center bg-gray-800 rounded-lg p-6 w-full sm:w-96'>
-                                    <h2 className='text-primary text-2xl font-bold mb-2'>{item.title}</h2>
-                                    <p className='text-gray-300 text-lg mb-4'>{item.description}</p>
+            <MarketPlaceScrollBar mockData={mockData} />
+            {/* <div className="overflow-x-auto hide-scrollbar" ref={scrollRef} >
+                <div className="flex space-x-2">
+                    {mockData.map((item, index) => (
+                        <div key={index} className="inline-flex flex-none w-1/2 md:w-1/3 p-2">
+                            <div className="p-[1px] bg-landingBorderGradient rounded-[30px] w-full">
+                                <div className="flex flex-col sm:flex-row hero-border p-4 rounded-[30px] bg-landingBack">
+                                    <Image
+                                        className="w-full sm:w-[270px] mb-4 sm:mb-0"
+                                        src={`/imgs/iPhone_screenshots/${item.imgUrl}`}
+                                        alt="iPhone ScreenShot"
+                                        width={298}
+                                        height={589}
+                                    />
+                                    <div className="flex flex-col justify-center bg-gray-800 rounded-lg p-6 w-full sm:w-96">
+                                        <h2 className="text-primary text-2xl font-bold mb-2">{item.title}</h2>
+                                        <p className="text-gray-300 text-lg mb-4">{item.description}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-
+                    ))}
+                </div>
+            </div> */}
             <div className='flex flex-col items-center justify-center my-6'>
                 <a href='#' className='inline-flex items-center px-10 py-5 pb-5 text-[24px] font-semibold text-primary bg-landing rounded-full border border-primary font-sans'>
                     Go to marketplace

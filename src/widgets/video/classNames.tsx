@@ -1,11 +1,11 @@
-export const containerClasses = `w-full max-w-2xl mt-[-40%] z-10 flex space-x-building`;
+export const containerClasses = `max-w-2xl mt-[-40%] z-10 flex space-x-building`;
 export const innerDivClasses = `mt-[-20px]`;
 
 ///Total Widget Continer
-export const WidgetVideoContainer = `w-full h-screen flex flex-col items-center  overflow-hidden`
+export const WidgetVideoContainer = `my-10 mx-16 h-screen flex flex-col items-center  overflow-hidden`
 
 ///For TimeLine
-export const TimeLineContainer = `w-full max-w-2xl mt-[-40px] z-10`
+export const TimeLineContainer = `w-full max-w-2xl mt-[-40px] z-10 px-8`
 export const TimeLineUnactiveProgress = `relative w-full h-2 bg-videoTimeLineBack rounded-full`
 export const TimeLineActiveProgress = `absolute top-0 left-0 h-full bg-videoTimeLineActive rounded-full`
 

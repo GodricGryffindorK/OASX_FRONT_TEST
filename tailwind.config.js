@@ -16,8 +16,8 @@ module.exports = {
       },
       backgroundImage: {
         "landingBorderGradient": 'linear-gradient(to bottom right, rgba(255,255,255,0.4), rgba(255,255,255,0), rgba(255,255,255,0.1), rgba(255,255,255,0))',
-        "searchBtnGradient": 'linear-gradient(to right, #20d795, #0c5f55)',
-        'searchCaptionGradient': 'linear-gradient(to right, #9ae2c8, #20d795, #0c5f55)',
+        "searchBtnGradient": 'linear-gradient(to bottom right, rgba(32, 215, 149, 1), rgba(12, 95, 85, 1) 110%)',
+        'searchCaptionGradient': 'linear-gradient(to bottom right, #9ae2c8, #20d795, #0c5f55 90%)',
       },
       spacing: {
         'building': '8rem', // Example default value
@@ -31,7 +31,7 @@ module.exports = {
         },
       },
       screens: {
-        xl: '1312px',
+        // xl: '1312px',
       },
       fontFamily: {
         sans: ['Euclid Galactic', 'ui-sans-serif', 'system-ui', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],

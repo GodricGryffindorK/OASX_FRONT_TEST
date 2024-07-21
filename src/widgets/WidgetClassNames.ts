@@ -1,2 +1,2 @@
-export const WidgetBorderContainer = `w-full h-screen flex items-center justify-center overflow-hidden bg-landingBorderGradient rounded-[30px] p-[1px]`
+export const WidgetBorderContainer = `my-10 mx-16 flex items-center justify-center overflow-hidden bg-landingBorderGradient rounded-[30px] p-[1px]`
 export const WidgetContentContainer = `w-landingContentWidth h-landingContentWidthHeight flex items-center justify-center overflow-hidden bg-landingBack rounded-[30px]`
