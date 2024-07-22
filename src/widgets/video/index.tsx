@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from 'react';
 import PCTimeline from './PCTimeLine';
 import MobileTimeline from './MobileTimeLine'; // Import the second Timeline component
 
-import { WidgetVideoContainer, VideoElement, TimeLineContainer } from './classNames';
+import { WidgetVideoContainer, VideoElement } from './classNames';
 
 const VideoPlayer: React.FC = () => {
     const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -73,12 +73,11 @@ const VideoPlayer: React.FC = () => {
             <video
                 ref={videoRef}
                 className={VideoElement}
-                src={videoSrc}
-                type="video/mp4"
                 autoPlay
                 muted
                 loop
             >
+                <source src={videoSrc} type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
             {isMobileView ? <MobileTimeline currentTime={currentTime} duration={26.823264} /> : <PCTimeline currentTime={currentTime} duration={26.823264} />}

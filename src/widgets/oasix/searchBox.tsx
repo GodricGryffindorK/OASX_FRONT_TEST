@@ -1,6 +1,6 @@
 "use client"
 import SearchIcon from '@mui/icons-material/Search';
-import { SearchBoxBorderContainer, SearchBoxContentContainer, SearchBoxIcon, SearchBoxInput, SearchBoxRoundedBtn } from './classNames';
+import { SearchBoxBorderContainer, SearchBoxContentContainer, SearchBoxInput, SearchBoxRoundedBtn } from './classNames';
 
 const SearchBox = () => {
     return (
